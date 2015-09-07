@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            // var questions = 3;
+            // var questionsLeft = ' [' + questions + ' questionsLeft ]';
+
+            // var adj  = prompt("Please give an adj" + questionsLeft );
+            // questions -= 1;
+            // questionsLeft = ' [ ' + questions + ' questionsLeft ]';
+
+            // var verb = prompt("Please give a verb " + questionsLeft);
+            // questions -= 1;
+            // questionsLeft = questions + ' questionsLeft';
+            // var noun = prompt("Please give a noun" + questionsLeft);
+
+            // var sentence = "There once was a baker who went to the " + adj.toUpperCase() + " ";
+            // sentence += noun.toUpperCase() + " . He was in such a hurry, that he " + verb + " and fell in " + noun + "<br>";
+
+            // document.write(sentence);
+
+            /// *********************************************************************************
+
+            //                        Math
+            /// *********************************************************************************
+
+            // var dice = Math.ceil(Math.random() * 6);
+
+            // var guess = prompt("I am thinking a number between 1 -6");
+
+            // if(parseInt(guess) === dice){
+            //     document.write("The number is " + dice + ", Right Anwser");
+            // } else {
+            //     document.write("Wrong!! The number is " + dice)
+            // }
+
+            // document.write(dice);
+
+            /// *********************************************************************************
+
+            //                      boolan
+            /// *********************************************************************************
+            /*
+            random number generator
+
+            */
+            
+            var correctGuess = false;
+            var dice = Math.ceil(Math.random() * 6); // generates number between 1 -6 
+            var guess = prompt("I am thinking a number between 1 -6");
+
+            if(parseInt(guess) === dice){  // if correct guess is true
+                correctGuess = true;
+            } else if(parseInt(guess) < dice){ // second try if higher
+                var guessMore = prompt("Try Again. The number is higher then " + guess);
+                if(parseInt(guessMore) === dice){
+                    correctGuess = true;
+                }
+            } else if(parseInt(guess) > dice){ // second try if lower
+                var guessLess = prompt("Try Again. The number is lower then " + guess);
+                if(parseInt(guessLess) === dice){
+                    correctGuess = true;
+                }
+            }
+
+            if(correctGuess){
+                document.write( dice + " You guessed right. ");
+            } else {
+                document.write("Wrong. The number was " + dice );
+            }
+
+
+
+
+        </script>
+
+    </body>
+</html>
